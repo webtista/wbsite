@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "tailwindcss/preflight.css" layer(base);
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-customRed: #F51B1B;
+  --color-customDark: #282828;
+  --color-customLight: #F1EFE9;
+  --color-customLightDark:#222222;
+/*Fonts*/
+  --font-opensans: "Open Sans", sans-serif;
+
+
+
+}

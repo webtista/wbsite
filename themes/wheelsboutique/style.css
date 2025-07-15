@@ -1,0 +1,31 @@
+/*
+Theme Name: Wheels Boutique
+Theme URI: https://wheelsboutique.com
+Author: Webtista
+Author URI: https://wheelsboutique.com
+Description: Custom WordPress theme for Wheels Boutique — a luxury and performance automotive brand. Built for speed, SEO, and product showcase.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wheelsboutique
+Tags: custom-theme, responsive, tailwind, performance, ecommerce
+
+-------------------------------------------------------------------------------
+STRUCTURE OVERVIEW
+-------------------------------------------------------------------------------
+1. Normalize & Base Styles
+2. Global Elements (Body, Headings, Links, Buttons)
+3. Layout Grid & Containers
+4. Header & Navigation
+5. Homepage Sections
+6. Product Pages & Gallery
+7. Shop, Filters & Fitment Tools
+8. Blog & Posts
+9. Contact & Forms
+10. Footer & Widgets
+11. Responsive Breakpoints
+12. Animations & Transitions
+13. WooCommerce Styles (if used)
+14. Utility Classes
+-------------------------------------------------------------------------------
+*/

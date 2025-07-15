@@ -1,0 +1,55 @@
+<?php
+// Register Custom Post Type: Exterior
+function wb_register_exterior_post_type() {
+    $labels = array(
+        'name'                  => _x('Exteriors', 'Post Type General Name', 'wheelsboutique'),
+        'singular_name'         => _x('Exterior', 'Post Type Singular Name', 'wheelsboutique'),
+        'menu_name'             => __('Exteriors', 'wheelsboutique'),
+        'name_admin_bar'        => __('Exterior', 'wheelsboutique'),
+        'archives'              => __('Exterior Archives', 'wheelsboutique'),
+        'attributes'            => __('Exterior Attributes', 'wheelsboutique'),
+        'parent_item_colon'     => __('Parent Exterior:', 'wheelsboutique'),
+        'all_items'             => __('All Exteriors', 'wheelsboutique'),
+        'add_new_item'          => __('Add New Exterior', 'wheelsboutique'),
+        'add_new'               => __('Add New', 'wheelsboutique'),
+        'new_item'              => __('New Exterior', 'wheelsboutique'),
+        'edit_item'             => __('Edit Exterior', 'wheelsboutique'),
+        'update_item'           => __('Update Exterior', 'wheelsboutique'),
+        'view_item'             => __('View Exterior', 'wheelsboutique'),
+        'view_items'            => __('View Exteriors', 'wheelsboutique'),
+        'search_items'          => __('Search Exterior', 'wheelsboutique'),
+        'not_found'             => __('Not found', 'wheelsboutique'),
+        'not_found_in_trash'    => __('Not found in Trash', 'wheelsboutique'),
+        'featured_image'        => __('Featured Image', 'wheelsboutique'),
+        'set_featured_image'    => __('Set featured image', 'wheelsboutique'),
+        'remove_featured_image' => __('Remove featured image', 'wheelsboutique'),
+        'use_featured_image'    => __('Use as featured image', 'wheelsboutique'),
+        'insert_into_item'      => __('Insert into exterior', 'wheelsboutique'),
+        'uploaded_to_this_item' => __('Uploaded to this exterior', 'wheelsboutique'),
+        'items_list'            => __('Exteriors list', 'wheelsboutique'),
+        'items_list_navigation' => __('Exteriors list navigation', 'wheelsboutique'),
+        'filter_items_list'     => __('Filter exteriors list', 'wheelsboutique'),
+    );
+    $args = array(
+        'label'                 => __('Exterior', 'wheelsboutique'),
+        'description'           => __('Custom post type for exteriors', 'wheelsboutique'),
+        'labels'                => $labels,
+        'supports'              => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'taxonomies'            => array('exterior_brand'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'post',
+        'rewrite'               => array('slug' => 'products/exterior', 'with_front' => false),
+    );
+    register_post_type('exterior', $args);
+}
+add_action('init', 'wb_register_exterior_post_type', 0);

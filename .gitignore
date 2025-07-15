@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Allow only custom theme and plugin
+!.gitignore
+!themes/
+!themes/wheelsboutique/
+!themes/wheelsboutique/**
+
+!plugins/
+!plugins/wb-custom/
+!plugins/wb-custom/**
+# Ignore large media files
+themes/wheelsboutique/images/front.mp4
+*.mp4
