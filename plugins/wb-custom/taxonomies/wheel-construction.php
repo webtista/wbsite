@@ -21,8 +21,10 @@ function create_wheel_construction_tax() {
         'publicly_queryable' => true,
         'hierarchical'       => false, // Set to false to make it non-hierarchical like tags
         'show_ui'            => true,
-        'rewrite'            => array('slug' => 'wheel-construction'),
-        'with_front'         => true,
+        'rewrite'            => array(
+            'slug'       => 'wheel-construction',
+            'with_front' => true,
+        ),
         'show_in_menu'       => true,
         'show_admin_column'  => true,
         'show_in_nav_menus'  => true,
