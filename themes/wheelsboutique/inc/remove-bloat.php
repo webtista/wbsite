@@ -67,6 +67,13 @@ add_action('init', 'wheelsboutique_disable_emojis', 1);
 
 // 3. Improve SEO meta robots defaults
 add_filter('wp_robots', function($robots) {
+    if (is_search() || is_404()) {
+        return [
+            'noindex' => true,
+            'nofollow' => true,
+        ];
+    }
+
     return [
         'index'  => true,
         'follow' => true,

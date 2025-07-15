@@ -12,11 +12,11 @@ $default_url = home_url('/');
 $default_image = get_template_directory_uri() . '/assets/img/og-image.jpg';
 
 if (is_singular()) {
-    $title = get_the_title();
+    $title = get_the_title() . ' | ' . $default_title;
     $description = get_the_excerpt() ?: $default_description;
     $url = get_permalink();
 } elseif (is_archive()) {
-    $title = get_the_archive_title();
+    $title = get_the_archive_title() . ' | ' . $default_title;
     $description = term_description() ?: $default_description;
 
     $queried = get_queried_object();
@@ -30,7 +30,7 @@ if (is_singular()) {
     $description = $default_description;
     $url = $default_url;
 } elseif (is_search()) {
-    $title = 'Search results for "' . get_search_query() . '"';
+    $title = 'Search results for "' . get_search_query() . '" | ' . $default_title;
     $description = $default_description;
     $url = $default_url;
 } else {
