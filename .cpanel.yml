@@ -1,0 +1,6 @@
+deployment:
+  tasks:
+    - export GIT_WORK_TREE=/home/wheelsboutique/public_html/TEST/wp-content
+    - export GIT_DIR=/home/wheelsboutique/public_html/TEST/wp-content/.git
+    - git reset --hard HEAD
+    - git pull origin main
