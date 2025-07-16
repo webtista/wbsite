@@ -1,5 +1,5 @@
-<div class="sticky top-0 left-0 z-20 hidden sm:block ">
-  <header x-data="{
+<header class="sticky top-0 left-0 z-20 hidden sm:block ">
+  <nav x-data="{
     isOpen: false,
     isHovering: false,
     selectedProductSubMenu: 'chocolate',
@@ -30,31 +30,31 @@
     <div class="flex justify-between h-[75px] w-full bg-customLight dark:bg-customDark border-b border-stone-300 dark:border-stone-700 transition duration-500">
             <div class="menu-main hidden items-center pl-12  sm:hidden md:flex lg:flex">
               <a href="/" class="text-2xl font-bold text-purple-800 dark:text-white">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/red.png"
+                <img src="<?php echo get_template_directory_uri(); ?>/images/wblogoblack.svg"
                      alt="wheels boutique brand logo"
                      class="w-70" />
               </a>
             </div>
             <div class="menu-main hidden items-center mx-auto pr-70 sm:hidden md:flex lg:flex">
-              <ul class="list-none flex items-center gap-x-3">
+              <ul class="list-none flex items-center gap-x-3" role="menubar">
                 <li class="group" @mouseenter="isOpen = true" @mouseleave="isOpen = false">
-                  <button class="tracking-[0.1em] font-black  uppercase py-4 px-6 text-sm text-customDark dark:text-customLight relative before:content-[''] before:absolute before:w-full before:h-[80px] before:top-1/2 before:left-0 before:-translate-y-1/2 hover:font-extrabold transition" @click="isOpen = !isOpen" aria-label="Open Product Menu">
+                  <a href="/products" class="tracking-[0.1em] font-black  uppercase py-4 px-6 text-sm text-customDark dark:text-customLight relative before:content-[''] before:absolute before:w-full before:h-[80px] before:top-1/2 before:left-0 before:-translate-y-1/2 hover:font-extrabold transition" @click="isOpen = !isOpen" aria-label="Open Product Menu">
                     Products
-                  </button>
+                  </a>
                   <div x-show="isOpen" x-transition:enter="transition ease-in-out duration-200" x-transition:enter-start="scale-y-0 opacity-0" x-transition:enter-end="scale-y-100 opacity-100" x-transition:leave="transition ease-in-out duration-200 pointer-events-none" x-transition:leave-start="scale-y-10 opacity-100" x-transition:leave-end="scale-y-0 opacity-0" class="layout-header-dropdown origin-top p-12 ray-background absolute inset-x-0 top-full z-10 bg-customLight group-focus-within:!block max-h-[calc(100dvh_-_75px)] overflow-auto" style="display: none;">
-                    <div class="flex bg-off-white border-4 border-black rounded-lg">
-                      <div class="flex flex-col border-r-4 border-black min-w-[230px]">
+                    <div class="flex bg-customLight border-1 border-black rounded-lg">
+                      <div class="flex flex-col border-r-1 border-black min-w-[230px]">
                         <ul class="list-none flex-1"><li x-data="{ menuTitle: 'chocolate' }">
-                                <a class="block font-bold text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition bg-black text-white" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/collections/chocolate">
-                                  chocolate
+                                <a class="block font-bold text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition bg-black text-white" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/products/wheels/">
+                                Wheels
                                 </a>
                               </li><li x-data="{ menuTitle: 'cups' }">
-                                <a class="block font-bold text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/collections/cups">
-                                  cups
+                                <a class="block font-bold text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/products/exhausts/">
+                                Exhaust
                                 </a>
                               </li><li x-data="{ menuTitle: 'Bundles' }">
-                                <a class="block text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/collections/bundles">
-                                  Bundles
+                                <a class="block text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/products/exterior/">
+                                Exterior
                                 </a>
                               </li><li x-data="{ menuTitle: 'Limited Time' }">
                                 <a class="block font-bold text-[25px]  text-left uppercase py-4 pl-8 w-full hover:bg-black hover:text-white transition" :class="{ 'bg-black text-white': selectedProductSubMenu ==  menuTitle }" @mouseenter="selectedProductSubMenu = menuTitle" @click="selectedProductSubMenu = menuTitle" href="/collections/limited-time-offers">
@@ -63,7 +63,7 @@
                               </li></ul></div><div class="sub-nav-wide flex flex-col flex-1 md:flex-col lg:flex-row justify-center items-center" x-show="selectedProductSubMenu == 'chocolate'" style="">
                             <div class="class-1 flex flex-wrap flex-row justify-center gap-4 p-8 3xl:p-12">
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/birthday-cake-batter">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Feastables_Jan2025_CartonOpen_BirthdayCakeBatter_Mockup_v5.png?v=1744822939&amp;width=157" alt="Birthday Cake Batter" width="1214" height="2122" loading="lazy">
@@ -74,7 +74,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/milk-chocolate">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
 
@@ -86,7 +86,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/peanut-butter-chocolate">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_PB_60g_Carton.png?v=1728500199&amp;width=157"  alt="Peanut Butter King Size (60g) - USCL1007" width="2535" height="2316" loading="lazy">
@@ -97,7 +97,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/milk-crunch-chocolate">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_Milk_Crunch_60g_Carton.png?v=1728500159&amp;width=157"  alt="Milk Crunch King Size (60g) - USCL1006" width="2535" height="2316" loading="lazy">
@@ -108,7 +108,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/peanut-butter-crunch-chocolate">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_PBC_60g_Carton.png?v=1728500237&amp;width=157"  alt="Peanut Butter Crunch King Size (60g) - USCL1009" width="2535" height="2316" loading="lazy">
@@ -119,7 +119,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/almond-chocolate">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_Almond_60g_Carton.png?v=1728499681&amp;width=157"  alt="Almond Chocolate King Size (60g) - USCL1001" width="2535" height="2316" loading="lazy">
@@ -130,7 +130,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/dark-chocolate">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_Dark_60g_Carton.png?v=1728499954&amp;width=157"  alt="Dark Chocolate King Size (60g) - USCL1000" width="2535" height="2316" loading="lazy">
@@ -141,7 +141,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/dark-chocolate-sea-salt">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_Dark_SeaSalt_60g_Carton.png?v=1728500071&amp;width=157"  alt="Dark Chocolate Sea Salt King Size (60g) - USCL1004" width="2535" height="2316" loading="lazy">
@@ -152,7 +152,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/cookies-creme">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Chocolate_CookiesCreme_60g_Carton.png?v=1745519325&amp;width=157"  alt="Cookies &amp; Creme King Size (60g) - USCL1008" width="2535" height="2316" loading="lazy">
@@ -164,7 +164,7 @@
     </div></div></div><div class="sub-nav-wide flex flex-col flex-1 md:flex-col lg:flex-row justify-center items-center" x-show="selectedProductSubMenu == 'cups'" style="display: none;">
                             <div class="class-1 flex flex-wrap flex-row justify-center gap-4 p-8 3xl:p-12">
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/peanut-butter-cups">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Cups_PB_1ct.png?v=1741633576&amp;width=157" alt="Creamy Peanut Butter Cups (2 cups) - USCP2202" width="2535" height="2316" loading="lazy">
@@ -175,7 +175,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/hazelnut-cups">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Cups_HN_1ct.png?v=1750094979&amp;width=157"  alt="Hazelnut Cups" width="2535" height="2316" loading="lazy">
@@ -187,7 +187,7 @@
     </div></div></div><div class="sub-nav-wide flex flex-col flex-1 md:flex-col lg:flex-row justify-center items-center" x-show="selectedProductSubMenu == 'Bundles'" style="display: none;">
                             <div class="class-1 flex flex-wrap flex-row justify-center gap-4 p-8 3xl:p-12">
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/sampler-pack">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/SamplerPack_2x_4b677e6c-1a70-4407-8687-adbdc5431b15.png?v=1731697145&amp;width=157" alt="Sampler Pack" width="2535" height="2316" loading="lazy">
@@ -198,7 +198,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/milk-chocolate-pack">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/MilkChocolate_35g_5ct_2x_1dd90a89-8c1f-4a3d-bd7e-8627a0b521f7.png?v=1731697434&amp;width=157" srcset="//feastables.com/cdn/shop/files/MilkChocolate_35g_5ct_2x_1dd90a89-8c1f-4a3d-bd7e-8627a0b521f7.png?v=1731697434&amp;width=157, //feastables.com/cdn/shop/files/MilkChocolate_35g_5ct_2x_1dd90a89-8c1f-4a3d-bd7e-8627a0b521f7.png?v=1731697434&amp;width=314 2x" alt="Milk Chocolate Pack" width="2535" height="2316" loading="lazy">
@@ -209,7 +209,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/peanut-butter-pack">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/PeanutButter_35g_5ct_2x_d1f3ad09-b276-430f-9519-bc830077cafd.png?v=1731697205&amp;width=157" srcset="//feastables.com/cdn/shop/files/PeanutButter_35g_5ct_2x_d1f3ad09-b276-430f-9519-bc830077cafd.png?v=1731697205&amp;width=157, //feastables.com/cdn/shop/files/PeanutButter_35g_5ct_2x_d1f3ad09-b276-430f-9519-bc830077cafd.png?v=1731697205&amp;width=314 2x" alt="Peanut Butter Pack" width="2535" height="2316" loading="lazy">
@@ -220,7 +220,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/milk-crunch-pack">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Milk-Crunch-5-Pack-PDP-Main.png?v=1744742328&amp;width=157" srcset="//feastables.com/cdn/shop/files/Milk-Crunch-5-Pack-PDP-Main.png?v=1744742328&amp;width=157, //feastables.com/cdn/shop/files/Milk-Crunch-5-Pack-PDP-Main.png?v=1744742328&amp;width=314 2x" alt="Milk Crunch Pack" width="2558" height="1334" loading="lazy">
@@ -231,7 +231,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/value-pack">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/ValuePack.png?v=1721672593&amp;width=157" srcset="//feastables.com/cdn/shop/files/ValuePack.png?v=1721672593&amp;width=157, //feastables.com/cdn/shop/files/ValuePack.png?v=1721672593&amp;width=314 2x" alt="Value Pack" width="2535" height="2316" loading="lazy">
@@ -242,7 +242,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/snack-size-variety-bag">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/VarietyBag_35g_28ct_22264843-38f5-41b0-91c6-34a703836bcd.png?v=1738879647&amp;width=157" srcset="//feastables.com/cdn/shop/files/VarietyBag_35g_28ct_22264843-38f5-41b0-91c6-34a703836bcd.png?v=1738879647&amp;width=157, //feastables.com/cdn/shop/files/VarietyBag_35g_28ct_22264843-38f5-41b0-91c6-34a703836bcd.png?v=1738879647&amp;width=314 2x" alt="Snack-Size Variety Bag" width="2535" height="2316" loading="lazy">
@@ -254,7 +254,7 @@
     </div></div></div><div class="sub-nav-wide flex flex-col flex-1 md:flex-col lg:flex-row justify-center items-center" x-show="selectedProductSubMenu == 'Limited Time'" style="display: none;">
                             <div class="class-1 flex flex-wrap flex-row justify-center gap-4 p-8 3xl:p-12">
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/birthday-cake-batter">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/Feastables_Jan2025_CartonOpen_BirthdayCakeBatter_Mockup_v5.png?v=1744822939&amp;width=157" srcset="//feastables.com/cdn/shop/files/Feastables_Jan2025_CartonOpen_BirthdayCakeBatter_Mockup_v5.png?v=1744822939&amp;width=157, //feastables.com/cdn/shop/files/Feastables_Jan2025_CartonOpen_BirthdayCakeBatter_Mockup_v5.png?v=1744822939&amp;width=314 2x" alt="Birthday Cake Batter" width="1214" height="2122" loading="lazy">
@@ -265,7 +265,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/mrbeast-x-jlab-head-phones">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/MrBeast_x_JLAB_Headphones_Main.png?v=1742840204&amp;width=157" srcset="//feastables.com/cdn/shop/files/MrBeast_x_JLAB_Headphones_Main.png?v=1742840204&amp;width=157, //feastables.com/cdn/shop/files/MrBeast_x_JLAB_Headphones_Main.png?v=1742840204&amp;width=314 2x" alt="Headphones - MrBeast X JLAB" width="1410" height="1708" loading="lazy">
@@ -276,7 +276,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/beast-tower-headset-stand">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/MrBeast_Headset_Stand_Main.png?v=1742840184&amp;width=157" srcset="//feastables.com/cdn/shop/files/MrBeast_Headset_Stand_Main.png?v=1742840184&amp;width=157, //feastables.com/cdn/shop/files/MrBeast_Headset_Stand_Main.png?v=1742840184&amp;width=314 2x" alt="Headset Stand - Beast Tower" width="1464" height="1464" loading="lazy">
@@ -287,7 +287,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/mrbeast-briefcase-collectors-edition">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/MrBeast_Briefcase_1.png?v=1733425566&amp;width=157" srcset="//feastables.com/cdn/shop/files/MrBeast_Briefcase_1.png?v=1733425566&amp;width=157, //feastables.com/cdn/shop/files/MrBeast_Briefcase_1.png?v=1733425566&amp;width=314 2x" alt="MrBeast Briefcase Collector's Edition" width="2535" height="2316" loading="lazy">
@@ -298,7 +298,7 @@
       </a>
     </div>
 
-    <div class="card card-product bg-off-white border-4 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
+    <div class="card card-product bg-customLight border-1 border-black rounded-[14px] overflow-hidden w-[200px] hover:drop-shadow-[5px_6px_0_#000000] focus:drop-shadow-[5px_6px_0_#000000] transition ease-in duration-100">
       <a class="card-link block focus-visible:ring" href="/products/beast-games-box">
         <picture class="card-media block w-full aspect-[1/0.75] bg-customLight wave-edge-b p-4 mb-[10%]">
           <img class="w-full h-full object-contain object-center" src="//feastables.com/cdn/shop/files/BeastGamesBox.png?v=1733518794&amp;width=157" srcset="//feastables.com/cdn/shop/files/BeastGamesBox.png?v=1733518794&amp;width=157, //feastables.com/cdn/shop/files/BeastGamesBox.png?v=1733518794&amp;width=314 2x" alt="Beast Games Box" width="2535" height="2316" loading="lazy">
@@ -342,6 +342,6 @@
 </div>
           </div>
 
-        </header>
+        </nav>
       </div>
-</div>
+</header>

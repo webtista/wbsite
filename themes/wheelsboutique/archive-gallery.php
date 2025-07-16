@@ -2,19 +2,15 @@
 
 <main class="container mx-auto px-4 py-15">
   <header class="mb-6 text-center">
-    <h1 class="text-3xl font-bold text-customDark dark:text-customLight">Customer Vehicles Portfolio</h1>
-    <p class="text-sm dark:text-customLightText">Real vehicles on real wheels. Filter by brand, model, or wheel.</p>
+    <h1 class="text-4xl font-bold text-customDark dark:text-customLight font-specialgothic tracking-wider uppercase">Customer Vehicles<br>Portfolio</h1>
+    <p class="text-sm dark:text-customLightText py-5">Real vehicles on real wheels. Filter by brand, model, or wheel.</p>
   </header>
 
   <?php get_template_part('parts/search-section'); ?>
 
-  <!-- Page Counter -->
-  <section class="page-counter">
-    <?php wheelsboutique_page_counter(); ?>
-  </section>
 
   <!-- Grid of Archive Cards -->
-  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-30" aria-label="Gallery Results">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10" aria-label="Gallery Results">
 
     <?php
     $current_term = get_queried_object();
@@ -53,14 +49,14 @@
           <article class="bg-transparent dark:customDark transition" itemscope itemtype="https://schema.org/VisualArtwork">
             <a href="<?php the_permalink(); ?>" itemprop="url">
               <div class="overflow-hidden rounded-sm border border-stone-300 dark:border-stone-700">
-                <img src="<?php the_post_thumbnail_url('medium'); ?>"
+                <img src="<?php the_post_thumbnail_url('full'); ?>"
                      alt="<?php the_title_attribute(); ?>"
                      class="w-full aspect-video object-cover transition-transform duration-300 transform hover:scale-110"
                      itemprop="image">
               </div>
 
-              <div class="pt-8">
-                <h2 class="text-sm font-black mb-1 text-customDark dark:text-customLight uppercase tracking-wider" itemprop="name"><?php the_title(); ?></h2>
+              <div class="pt-4">
+                <h2 class="text-sm font-bold mb-1 text-customDark dark:text-customLight uppercase tracking-wider" itemprop="name"><?php the_title(); ?></h2>
                 <meta itemprop="dateCreated" content="<?php echo esc_attr(get_the_date('c')); ?>">
               </div>
             </a>

@@ -47,9 +47,16 @@ add_action('wp_enqueue_scripts', 'wheelsboutique_enqueue_assets');
 
 
 function enqueue_google_fonts() {
+    // Preconnect links for performance
+    add_action('wp_head', function() {
+        echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+        echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+    }, 0);
+
+    // Enqueue Open Sans and Special Gothic Expanded One
     wp_enqueue_style(
-        'google-fonts-open-sans',
-        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Special+Gothic+Expanded+One&display=swap',
         false
     );
 }

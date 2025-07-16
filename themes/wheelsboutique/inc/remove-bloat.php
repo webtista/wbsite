@@ -16,14 +16,6 @@ function wheelsboutique_optimize_scripts_styles() {
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
     remove_action('wp_head', 'wp_oembed_add_host_js');
 
-    // Remove block editor and global styles
-    wp_dequeue_style('wp-block-library');
-    wp_deregister_style('wp-block-library');
-    wp_dequeue_style('classic-theme-styles');
-    wp_deregister_style('classic-theme-styles');
-    wp_dequeue_style('global-styles');
-    wp_deregister_style('global-styles');
-
     // Prevent global styles from rendering
     remove_filter('wp_body_open', 'wp_global_styles_render_svg_filters');
     remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
@@ -79,3 +71,9 @@ add_filter('wp_robots', function($robots) {
         'follow' => true,
     ];
 });
+
+function wb_enqueue_block_editor_assets() {
+  wp_enqueue_style('wp-block-library'); // Core block styles
+  wp_enqueue_style('wp-block-library-theme'); // Theme support styles (like button styles, etc.)
+}
+add_action('wp_enqueue_scripts', 'wb_enqueue_block_editor_assets');

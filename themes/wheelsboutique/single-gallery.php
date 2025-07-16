@@ -1,11 +1,4 @@
 <?php get_header(); ?>
-<div class="relative w-64 h-16 overflow-hidden group">
-  <div class="absolute inset-0 flex items-center justify-center">
-    <span class="inline-block transition-transform duration-500 group-hover:-translate-x-full">
-      <span class="inline-block w-full text-center">Slide Text</span>
-    </span>
-  </div>
-</div>
 <main class="container mx-auto px-4 py-8">
   <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
