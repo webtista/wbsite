@@ -71,6 +71,26 @@ if (is_singular() && has_post_thumbnail()) {
   <!-- Favicon (optional) -->
   <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="image/x-icon">
 
+  <!-- Site verification tags for Microsoft and Pinterest -->
+  <meta name="msvalidate.01" content="DDFF2D33BE280A899A71B4C8EAD5AB2B" />
+  <meta name="p:domain_verify" content="649a4441c99598608e8bfe38c1bff851"/>
+
+  <!-- WordPress hook for enqueuing styles/scripts and injecting title tag dynamically -->
+  <?php wp_head(); ?>
+
+  <!-- Google Tag Manager script -->
+  <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T4S3R2FC');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Asynchronously load reCAPTCHA script for performance -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcYzoIqAAAAAMaeutzH-t4tDcA6UxHUQtFpJodR" async defer></script>
+
   <!-- Styles and Scripts Hook -->
   <?php wp_head(); ?>
 </head>

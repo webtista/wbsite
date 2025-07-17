@@ -38,7 +38,7 @@
             <div class="menu-main hidden items-center mx-auto pr-70 sm:hidden md:flex lg:flex">
               <ul class="list-none flex items-center gap-x-3" role="menubar">
                 <li class="group" @mouseenter="isOpen = true" @mouseleave="isOpen = false">
-                  <a href="/products" class="tracking-[0.1em] font-black  uppercase py-4 px-6 text-sm text-customDark dark:text-customLight relative before:content-[''] before:absolute before:w-full before:h-[80px] before:top-1/2 before:left-0 before:-translate-y-1/2 hover:font-extrabold transition" @click="isOpen = !isOpen" aria-label="Open Product Menu">
+                  <a href="/products" class="tracking-tight font-bold  uppercase py-4 px-6 text-lg text-customDark dark:text-customLight relative before:content-[''] before:absolute before:w-full before:h-[80px] before:top-1/2 before:left-0 before:-translate-y-1/2 hover:font-extrabold transition" @click="isOpen = !isOpen" aria-label="Open Product Menu">
                     Products
                   </a>
                   <div x-show="isOpen" x-transition:enter="transition ease-in-out duration-200" x-transition:enter-start="scale-y-0 opacity-0" x-transition:enter-end="scale-y-100 opacity-100" x-transition:leave="transition ease-in-out duration-200 pointer-events-none" x-transition:leave-start="scale-y-10 opacity-100" x-transition:leave-end="scale-y-0 opacity-0" class="layout-header-dropdown origin-top p-12 ray-background absolute inset-x-0 top-full z-10 bg-customLight group-focus-within:!block max-h-[calc(100dvh_-_75px)] overflow-auto" style="display: none;">
@@ -310,16 +310,16 @@
     </div></div></div></div>
                   </div>
                 </li><li class="">
-                    <a href="/customer-vehicles" class="tracking-[0.1em] font-black  text-sm text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">Customer Vehicles</a>
+                    <a href="/customer-vehicles" class="tracking-tight font-bold  text-lg text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">Customer Vehicles</a>
                   </li>
                   <li class="">
-                      <a href="/resources" class="tracking-[0.1em] font-black  text-sm text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">Resources</a>
+                      <a href="/resources" class="tracking-tight font-bold  text-lg text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">Resources</a>
                     </li>
                     <li class="">
-                        <a href="/about-us" class="tracking-[0.1em] font-black  text-sm text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">About Us</a>
+                        <a href="/about-us" class="tracking-tight font-bold  text-lg text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">About Us</a>
                       </li>
                       <li class="">
-                          <a href="/request-a-quote" class="tracking-[0.1em] font-black text-sm text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">Request a quote</a>
+                          <a href="/request-a-quote" class="tracking-tight font-bold text-lg text-customDark dark:text-customLight  text-center py-4 px-6 uppercase break-keep hover:font-extrabold  transition">Request a quote</a>
                         </li>
                 </ul>
 

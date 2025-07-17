@@ -2,9 +2,48 @@
 
 <main class="container mx-auto px-4 py-15">
   <header class="mb-6 text-center">
-    <h1 class="text-4xl font-bold text-customDark dark:text-customLight font-specialgothic tracking-wider uppercase">Customer Vehicles<br>Portfolio</h1>
-    <p class="text-sm dark:text-customLightText py-5">Real vehicles on real wheels. Filter by brand, model, or wheel.</p>
+    <h1 class="text-4xl leading-7 font-bold text-customDark dark:text-customLight font-specialgothic tracking-wider uppercase text-center">
+      <?php
+      if (is_tax()) {
+        $term = get_queried_object();
+
+        if ($term && $term->parent) {
+          $parent = get_term($term->parent, $term->taxonomy);
+          echo esc_html($parent->name) . ' ' . esc_html($term->name);
+        } else {
+          echo esc_html($term->name);
+        }
+        echo '<br><span class="text-base font-normal leading-1">Vehicle Gallery | Custom Wheels & Upgrades</span>';
+      } else {
+        echo 'Customer Vehicles<br><span class="text-base font-normal leading-1">Portfolio</span>';
+      }
+      ?>
+    </h1>
+
+
+
+    <p class="text-sm dark:text-customLightText py-5">
+      <?php
+      if (is_tax()) {
+        $term = get_queried_object();
+
+        if ($term->parent) {
+          $parent = get_term($term->parent, $term->taxonomy);
+          $name = $parent->name . ' ' . $term->name;
+        } else {
+          $name = $term->name;
+        }
+
+        echo esc_html($name) . ' builds featuring custom wheels, suspension, exhaust systems, and aerodynamic upgrades.<br>To request pricing or discuss your next project, contact us via email, phone, or our website form.';
+      } else {
+        echo 'Builds featuring custom wheels, suspension, exhaust systems, and aerodynamic upgrades.<br>To request pricing or discuss your next project, contact us via email, phone, or our website form.';
+      }
+      ?>
+    </p>
+
   </header>
+
+
 
   <?php get_template_part('parts/search-section'); ?>
 
